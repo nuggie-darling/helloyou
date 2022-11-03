@@ -810,6 +810,33 @@ def choice18b():
     lprint("**")
 
 def choice17b():
+    lprint("*You try to find something to fight the goose with.*")
+    lprint("*You find a toothpick on the ground and hold it in front of the goose.*")
+    lprint("You: ENGARDE!!")
+    lprint("*The goose frowns at you then screeches.*")
+    lprint("*It comes at you, wanting to eat you.*")
+    lprint("*You attack the goose with the toothpick and hit it in the eye.*")
+    lprint("*It screeches again and takes two steps away from you.*")
+    lprint("*You...*")
+    choice22()
+
+def choice22():
+    lprint('''a) *stab the goose again.*
+    b) *throw the toothpick at the goose and run away.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You wait for the goose to approach you again then stab it in its other eye.*")
+        choice22a()
+    elif answer == "b":
+        lprint("*You throw the toothpick at the goose and sprint as fast as you can in the opposite direction.*")
+        choice22b()
+
+def choice22a():
+    lprint("**")
+
+def choice22b():
     lprint("**")
 
 def choice15b():
