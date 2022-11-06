@@ -11,6 +11,26 @@ def lprint(s):
     print("")
     sleep(0.01)
 
+def Restart_Or_Quit():
+    answer = ""
+    lprint("Would you like to restart? (Yes / No")
+    response = input().lower()
+    while answer != "yes" or answer != "no":
+        answer = response
+        if response == "yes":
+            Start()
+        elif response == "no":
+            quit()
+
+def glitch():
+    import random
+    for i in range(10):
+        original = "A̶̾̔B̷́́C̸̓̉D̵͒͊Ê̷͝F̵́̎G̴̏͂H̸̿͘I̴͆͘J̴̈͛Ḱ̶̕L̸̀̓M̸̄͌N̵͂͝Ő̵̂P̶̔̽Q̴͆͗R̵̐̀S̵̎͝Ť̴̎U̴͗̈́V̵̔̓W̵̆̾X̵̌̆Y̵͆͝Z̶̋̋"
+        randomised = ''.join(random.sample(original, len(original)))
+
+        lprint(randomised)
+        Restart_Or_Quit()
+
 def Start():
     lprint("???: Wake up. Hey, wake up!") #printing line
     lprint("*You're startled awake by the strange voice.*")
@@ -49,6 +69,10 @@ b) *go towards the light.*''') #prints two seperate lines, hense the three ' on 
         lprint("*You go towards the light.*")
         choice1b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice1a():
     lprint("*The cave gets darker and darker the further you go.*")
     lprint("*You decide to take a look in the backpack Ace gave you and find a torch.*")
@@ -78,6 +102,10 @@ b) *look through your backpack to see if you can find anything.*''')
     elif answer == "b": 
         lprint("*You look through your backpack to see if you can find anything.*")
         choice2b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice2a():
     lprint("*You walk and walk, but somehow can't make your way back to where you were before.*")
@@ -138,6 +166,10 @@ b) *walk up to the chest to open it.*''')
         lprint("*You walk up to the chest to open it.*")
         choice3b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice3a():
     lprint("Ace: You're going to need what's inside the chest to continue your quest.")
     lprint("You: I don't even want to go on this stupid quest! I just want to go home!")
@@ -167,6 +199,10 @@ b) *go back out from the water side and try to go somewhere from there.*''')
         lprint("*You decide to walk back out from where you entered.*")
         choice4b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice4a():
     lprint("*There's crystals and gorgeous colorful rocks that light up thr cave for you.*")
     lprint("*But even though it looks pretty, you're scared of the dangers of the quest ahead of you.*")
@@ -189,6 +225,10 @@ c) *go into the right path.*''')
     elif answer == "c":
         lprint("*You go into the right path.*")
         choice5c()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice5a():
     lprint("*The tunnel gets significantly darker which scares you.*")
@@ -213,11 +253,15 @@ b) *make a run for it to avoid any traps that may be right where you are.*''')
         lprint("*You make a run for it to avoid any traps that may be right where you are.*")
         choice6b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice6a():
     lprint("*You walk extremely slowly to avoid any traps that may lie ahead. *")
-    lprint("*Sadly for you, this was the wrong option! You fucking died.*")
-
-    # either restart or quit the game
+    lprint("*Sadly for you, this was the wrong option!")
+    lprint("*You fucking died.*") 
+    Restart_Or_Quit()
 
 def choice6b():
     lprint("*You make a run for it to avoid any traps that may be where you are.*")
@@ -251,8 +295,12 @@ b) *make a run for it and try to find the exit as quickly as possible.*''')
         lprint("*You turn around to try and find the source of the noise.*")
         choice7a()
     elif answer == "b":
-        lprint("*You make a run for it and try to find the exit as quickly as possible.*")
+        lprint("*You turn around and try to find the exit.*")
         choice7b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice7a():
     lprint("*As you walk back into the cave, you notice all the rocks and crystals that were shining brightly before had all been dimmed to leave an ominous light.*")
@@ -274,6 +322,10 @@ b) *It'll be good preparation, you should try to find this monster!*''')
     elif answer == "b":
         lprint("*It'll be good preparation, you should try to find this monster!*")
         choice8b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice8a():
     lprint("*It's way too terrifying to try and find a monster.*")
@@ -320,6 +372,10 @@ b) *The dagger.*''')
     elif answer == "b":
         lprint("*You use the dagger.*")
         choice9b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice9a():
     lprint("*You put the dagger back inside of your backpack and hold the liquid.*")
@@ -370,6 +426,10 @@ b) *Kill Ace.''')
         lprint("*You grip the sword in your hands tightly.*")
         choice10b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice10a():
     lprint("*You make your way through a forest, holding the sword in front of you as protection.*")
     lprint("*When you get deeper into the forest, you hear a strange noise.*")
@@ -417,8 +477,7 @@ def choice10a():
     lprint("*There's so many that you're drowning in them.*")
     lprint("*You reach your hand out, trying to get out from underneath them, but to no avail.*")
     lprint("*You drowned in The Cold-Blooded Iron Killer Bloodthirsty Icy Horror Crowned Killer Beasts.*")
-    
-    # restart or quit
+    Restart_Or_Quit()
 
 def choice10b():
     lprint("*You grin and hold the sword threateningly in front of Ace.*")
@@ -435,14 +494,127 @@ def choice10b():
     lprint("You: What...")
     lprint("Ace: You killed yourself.")
     lprint("*You can hear the faint sound of laughter as you pass out.*")
-
-    # restart or quit
+    Restart_Or_Quit()
 
 def choice9b():
-    lprint("**")
+    lprint("*You put the strange liquid back inside of your backpack and firmly grasp the dagger.*")
+    lprint("*You carefully walk through the cave.*")
+    lprint("*The deeper you go the darker the cave gets.*")
+    lprint("*The sound you heard before gets louder and louder.*")
+    lprint("*You find a tunnel in the cave.*")
+    lprint("*Is that where the sound is coming from?*")
+    choice30()
+
+def choice30():
+    lprint('''a) *Enter the tunnel.*
+    b) *LEAVE LEAVE LEAVE-*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You take a deep breath and enter the tunnel.*")
+        choice30a()
+    elif answer == "b":
+        lprint("*You quickly turn around and run back towards the exit, but it feels like a maze.*")
+        choice30b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice30a():
+    lprint("*The floor feels soft against your shoes and it sounds a little wet.*")
+    lprint("*You can't see anything and end up bumping against something warm and disgustingly wet.*")
+    lprint("*You take a step back, wiping your face.*")
+    lprint("You: What the fuck…")
+    lprint("*You hear a loud growl.*")
+    lprint("*As if it's coming from inside of you.*")
+    lprint("*But then you realize where it is coming from…*")
+    lprint("*You quickly run back towards the exit, but it's too late.*")
+    lprint("*The exit is sealed shut.*")
+    lprint("*You're stuck inside the monster's mouth.*")
+    lprint("*Forever.*")
+    Restart_Or_Quit()
+
+def choice30b():
+    lprint("*You can't find your way back.*")
+    lprint("*You don't recognize anything but at the same time all the hallways look the same to you.*")
+    lprint("*You run and run but no matter what way you go, you end up in the same place.*")
+    lprint("*In front of the tunnel.*")
+    lprint("*There's only two choices here.*")
+    choice31()
+
+def choice31():
+    lprint('''a) *Kill yourself before the monster does.*
+    b) *Go into the tunnel.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You decide to take matters into your own hands.*")
+        choice31a()
+    elif answer == "b":
+        lprint("*You walk into the tunnel.*")
+        choice31b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice31a():
+    lprint("*You take the dagger and slice your throat.*")
+    lprint("*It starts spraying like a water fountain.*")
+    lprint("*You fall down to the ground and bleed to death.*")
+    Restart_Or_Quit()
+
+def choice31b():
+    lprint("*It's dark and you hear growls come from multiple parts.*")
+    lprint("*You're scared to even continue walking.*")
+    lprint("*Before you know it you're attacked from left and right.*")
+    lprint("*What are these??*")
+    lprint("*Alligators???*")
+    lprint("*You're eaten alive by the alligators.*")
+    Restart_Or_Quit()
 
 def choice8b():
-    lprint("**")
+    lprint("*You muster up all the courage you have and look for the monster.*")
+    lprint("*You look for several minutes, but it almost seemed to have disappeared.*")
+    lprint("*You turn around and there's a fur wall in front of you.*")
+    lprint("*But it's not a wall...*")
+    lprint("*You look up and up until you finally find a face.*")
+    lprint("*It's… really ugly.*")
+    lprint("*It seems to not even notice you.*")
+    lprint("*You...*")
+    choice32()
+
+def choice32():
+    lprint('''a) *try to get its attention.*
+    b) *try to walk past it unseen.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("You: HEY, DOWN HERE!")
+        choice32a()
+    elif answer == "b":
+        lprint("*You attempt to walk past it unseen, but the monster is so physically massive it's impossible to pass by it without touching it. *")
+        choice32b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice32a():
+    lprint("*The monster looks down at you and grabs you, easily picking you up off the floor.*")
+    lprint("*It growls angrily at you, leaving you drenched in its saliva.*")
+    lprint("*You're so disgusted your body physically recoils and you'd rather be dead than in this stinky situation.*")
+    lprint("You: I-")
+    lprint("*Before you can finish your sentence the monster eats you.*")
+    Restart_Or_Quit()
+
+def choice32b():
+    lprint("*You try to go between its legs, but it starts moving and you get crushed between its thighs.*")
+    Restart_Or_Quit()
 
 def choice7b():
     lprint("**")
@@ -454,11 +626,109 @@ def choice5c():
     lprint("**")
 
 def choice4b():
-    lprint("**")
+    lprint("*You don't want to go into another cave so you try to go back out from where you came in.*")
+    lprint("*You reach your hand through the water, but it won't go through.*")
+    lprint("*It's like a barrier is created.*")
+    lprint("*You try your best to push through, but to no luck.*")
+    lprint("*Your only option is to go into the cave.*")
+    lprint("*Or...*")
+    choice34()
+
+def choice34():
+    lprint('''a) *Look through your backpack to find something to get out through the water.*
+b) *Just go into the cave.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You take off your backpack and look through it.*")
+        choice34a()
+    elif answer == "b":
+        lprint("*You decide to just go into the cave.")
+        choice34b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice34a():
+    lprint("*You find a weird-looking watch.*")
+    lprint("*Aside from that you don't see anything in the bag.*")
+    lprint("*You put on the watch and look at it.*")
+    lprint("*It has weird names on it.*")
+    lprint("*You click on one and look around you.*")
+    lprint("*Nothing seems to have changed.*")
+    lprint("*You try another button and suddenly the cave starts to melt.*")
+    lprint("*At an immensely fast pace.*")
+    lprint("*Everything around you is melting.*")
+    lprint("*It looks like not only the cave is melting…*")
+    lprint("*EVERYTHING is melting!*")
+    lprint("*Including you!*")
+    lprint("*You feel your body going limp and you start to sweat.*")
+    lprint("*You've turned into a puddle.*")
+    Restart_Or_Quit()
+
+def choice34b():
+    lprint("*You decide to just go into the cave.*")
+    choice4a()
 
 def choice3b():
-    lprint("*You hesitate a little, but your quoriosity wins over you.*")
-    lprint("*You walk up tot he chest to open it.*")
+    lprint("*You hesitate a little, but your cuoriosity wins over you.*")
+    lprint("*You walk up tot he chest.*")
+    lprint("*You want to open it, but it's locked.*")
+    lprint("*You turn to look at Ace, confused.*")
+    lprint("You: It's locked.")
+    lprint("Ace: Oh, my bad. Let me just-")
+    lprint("*Ace searches his pockets, trying to find the key to unlock the chest with.*")
+    lprint("*While he's searching his pockets, an ice pick falls from the ceiling and pierces right through Ace's skull.*")
+    lprint("*He falls on the ground.*")
+    lprint("You: Ace!!")
+    lprint("*You run towards him and dramatically hold him in your arms.*")
+    lprint("Ace: You… have to continue the quest… without me…")
+    lprint("You: No!")
+    lprint("You: No, just send me home!")
+    lprint("You: Please just send me home!")
+    lprint("*Ace puts his hand on your cheek and smiles, blood seeping out of his mouth.*")
+    lprint("*He pulls you closer to his mouth and whispers.*")
+    lprint("Ace: You're stuck here now.")
+    choice33()
+
+def choice33():
+    lprint('''a) *Try your best to continue with the quest.*
+b) *I would rather die than stay here.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You sigh and decide to go on with your quest.*")
+        choice33a()
+    elif answer == "b":
+        lprint("*You pull the icicle out of Ace's head.*")
+        choice33b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice33a():
+    lprint("*What else can you do?*")
+    lprint("*You continue searching Ace's pockets for him and find the key.*")
+    lprint("*You go up to the chest and open it, but it's…*")
+    lprint("*empty.*")
+    lprint("*You look around the cave.*")
+    lprint("*The entire world seems to be collapsing.*")
+    lprint("*It's distorting.*")
+    lprint("*Was Ace the only thing keeping this world together?*")
+    lprint("*Was this world ever even real?*")
+    lprint("*Are you waking up from a dream?*")
+    glitch()
+
+def choice33b():
+    lprint("*You'd rather die than go on a quest that could go on forever.*")
+    lprint("*Especially without a guide to help you.*")
+    lprint("*You take a deep breath then stab it through your stomach.*")
+    lprint("*You fall on top of Ace and you die together.*")
+    Restart_Or_Quit()
 
 def choice2b():
     lprint("*You look through your backpack to see if you can find anything.*")
@@ -469,7 +739,6 @@ def choice2b():
     lprint("*In front of you is a waterfall, but something is slightly off about it.*")
     lprint("*The air is grim and it feels like a broken world is in front of you.*")
     lprint("*You...*")
-    
 
 def choice1b():
     lprint("*The tunnel gets smaller as you approach the end of it.*")
@@ -493,6 +762,10 @@ def choice11():
         lprint("*You drink the red potion.*")
         choice11b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice11a():
     lprint("*You feel yourself getting smaller and smaller until you're the size of the door.*")
     lprint("*You walk up to the door and open it.*")
@@ -511,8 +784,12 @@ def choice12():
         lprint("*You follow the path and end up at a cabin.*")
         choice12a()
     elif answer == "b":
-        lprint("*You wander around and find a frozen over pond.*")
+        lprint("*You wander around for a bit and end up at a frozen over pond.*")
         choice12b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice12a():
     lprint("*Icicles are hanging from the roof and there's snow all around.*")
@@ -534,8 +811,44 @@ b) *go in from underneath the door.*''')
         lprint("*You go in from underneath the door.*")
         choice13b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice13a():
-    lprint("**")
+    lprint("*As you're looking, you find a ladder that reaches the roof.*")
+    lprint("*You start slowly but surely climbing the ladder, careful not to slip down due to your small size.*")
+    lprint("*You make it up to the roof and climb up to the chimney.*")
+    lprint("*Should you jump through it?*")
+    choice28()
+
+def choice28():
+    lprint('''a) *Yes.*
+b) *No.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You take the risk and jump through the chimney.*")
+        choice28a()
+    elif answer == "b":
+        lprint("*You'll find another way in.*")
+        choice28b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice28a():
+    lprint("*But you didn't notice the fireplace poker until too late.*")
+    lprint("*You're impaled on the edge and die almost instantly.*")
+    Restart_Or_Quit()
+
+def choice28b():
+    lprint("*You want to make your way back down off the roof, but slip and fall.*")
+    lprint("*You somehow end up on the one place of pavement without snow and bash your head in.*")
+    lprint("*You died.*")
+    Restart_Or_Quit()
 
 def choice13b():
     lprint("*You struggle quite a bit, but succeed in the end.*")
@@ -555,6 +868,10 @@ def choice14():
     elif answer == "b":
         lprint("*You don't care and just continue with your quest.*")
         choice14b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice14a():
     lprint("*You try to find a replacement shirt.*")
@@ -579,6 +896,10 @@ def choice15():
         lprint("*You shake your head and walk away, deciding to continue your quest with a ripped shirt.*")
         choice15b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice15a():
     lprint("*You grab the barbie and steal her shirt.*")
     lprint("*It's a bit loose on you, but it's currently the best you can do.*")
@@ -601,14 +922,17 @@ def choice16():
         lprint("*You run in the direction of the dining table.*")
         choice16b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice16a():
     lprint("*You get up to a bedroom and hide in the closet.*")
     lprint("*You can feel the house rumbling and shaking as the angry duck bumps against it.*")
     lprint("*The house snaps in half and you fall out of the closet.*")
     lprint("*You're now on the floor , trembling in fear as the dog growls at you.*")
     lprint("*Before you can even begin to react, the duck grabs you and eats you. *")
-
-# restart or quit
+    Restart_Or_Quit()
 
 def choice16b():
     lprint("*You run in the direction of the dining table.*")
@@ -632,6 +956,10 @@ def choice17():
         lprint("*You try to find something to fight the goose with.*")
         choice17b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice17a():
     lprint("*It's dusty which makes you sneeze a couple of times.*")
     lprint("*You can see the duck approaching the kitchen, but it doesn't seem to know where you went.*")
@@ -653,6 +981,10 @@ def choice18():
     elif answer == "b":
         lprint("*You look around in the dining room.*")
         choice18b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice18a():
     lprint("*You struggle to open one of the cabinets.*")
@@ -677,6 +1009,10 @@ def choice19():
         lprint("*You decide not to risk it and continue looking through the cabinet.*")
         choice19b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice19a():
     lprint("*You're somehow able to get the cork out of the bottle and tip it over, taking a sip.*")
     lprint("*You watch as the kitchen gets smaller and smaller until it's normal-sized.*")
@@ -696,6 +1032,10 @@ def choice20():
     elif answer == "b":
         lprint("*You decide not to be petty and just leave the cabin.*")
         choice20b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice20a():
     lprint("*Once you find it, you and the goose make intense eye contact with each other.*")
@@ -717,6 +1057,10 @@ def choice21():
     elif answer == "b":
         lprint("*You ignore the gothy-looking person and try to walk away from them.*")
         choice21b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
 
 def choice21a():
     lprint("???: Who are you? What are you doing here?")
@@ -752,8 +1096,7 @@ def choice21a():
     lprint("*The air gets grim and Luna angrily stands behind you.*")
     lprint("*Before you know it everything turns black.*")
     lprint("*You're dead.*")
-
-    # restart or quit
+    Restart_Or_Quit()
 
 def choice21b():
     lprint("*You ignore the gothy-looking person and try to walk away from them.*")
@@ -763,8 +1106,7 @@ def choice21b():
     lprint("*You gulp and don't say a word.*")
     lprint("*You blink and can no longer open your eyes.*")
     lprint("*You died.*")
-
-    # restart or quit
+    Restart_Or_Quit()
 
 def choice20b():
     lprint("*You decide not to be petty and just leave the cabin.*")
@@ -794,20 +1136,74 @@ def choice23():
         lprint("You: Kill me...")
         choice23b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice23a():
-    lprint("**")
+    lprint("Ace: Oh you will, huh?")
+    lprint("*Your breath hitches.*")
+    lprint("*Ace is standing right behind you.*")
+    lprint("*You: I- I just said that-*")
+    lprint("*Before you can finish your sentence your sight turns dark.*")
+    lprint("*Ace has killed you.*")
+    Restart_Or_Quit()
 
 def choice23b():
-    lprint("**")
+    lprint("Luna: As you wish~")
+    lprint("*Luna slams her hand into your chest, creating a cavity.*")
+    lprint("*She pulls her hand out and is holding your still thumping heart.*")
+    lprint("*You fall to your knees.*")
+    lprint("*Luna gets on her knees in front of you and whispers in your ear four words.*")
+    lprint("*'You wished for this.' Are the last words you hear before she gives you a light push.*")
+    lprint("*You fall on the snow, looking up at the sky as the life drains out of you.*")
+    Restart_Or_Quit()
 
 def choice19b():
     lprint("*You bump into one of the potions and it explodes.*")
     lprint("*You died.*")
-
-    # restart or quit
+    Restart_Or_Quit()
 
 def choice18b():
-    lprint("**")
+    lprint("*You find a large ring sitting next to one of the table legs.*")
+    lprint("*Or maybe it's a regular size ring.*")
+    lprint("*There's an engraving inside of the ring.*")
+    lprint("*It reads 'Luna Bushida; warrior for life'.*")
+    lprint("*You wonder if this Luna is the owner of this house.*")
+    lprint("*As the ring is too heavy to drag around with you, you decide to leave it and keep looking.*")
+    choice25()
+
+def choice25():
+    lprint('''a) *Go to the living room.*
+    b) *Go upstairs.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*Uh oh!*")
+        choice25a()
+    elif answer == "b":
+        lprint("*You find the staircase and start to climb it.*")
+        choice25b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice25a():
+    lprint("*Have you forgotten where the goose was?*")
+    lprint("*The goose grabs you by the leg with its mouth, flinging you around until your leg is chomped off.*")
+    lprint("*You're crying in pain, desperately trying to get away from this murderous goose.*")
+    lprint("*But you're too slow.*")
+    lprint("*The goose finds you again and eats you whole.*")
+    Restart_Or_Quit()
+
+def choice25b():
+    lprint("*It's more of a ladder than a staircase, so it's awfully steep.*")
+    lprint("*Your hands get sweaty the further up you are.*")
+    lprint("*You end up slipping and sliding down the ladder.*")
+    lprint("*The goose hears the thump and before you can react you're eaten.*")
+    Restart_Or_Quit()
 
 def choice17b():
     lprint("*You try to find something to fight the goose with.*")
@@ -833,23 +1229,202 @@ def choice22():
         lprint("*You throw the toothpick at the goose and sprint as fast as you can in the opposite direction.*")
         choice22b()
 
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
 def choice22a():
-    lprint("**")
+    lprint("*You wait for the goose to approach you again then stab it in its other eye.*")
+    lprint("*After that the goose runs away from you.*")
+    lprint("*You let out a relieved sigh and continue looking around the house.*")
+    lprint("*Your eye catches something shiny on top of the coffee table.*")
+    lprint("*As you approach it you notice it's a ring.*")
+    lprint("*You reach into your backpack and take out a catapult.*")
+    lprint("*You can either use the catapult or try to climb on the table.*")
+    lprint("*What do you do?*")
+    choice24()
+
+def choice24():
+    lprint('''a) *Use the catapult.*
+    b) *Climb the table.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You set up the catapult to use it.*")
+        choice24a()
+    elif answer == "b":
+        lprint("*You put the catapult back inside your bag for future use and decide to climb the table.*")
+        choice24b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice24a():
+    lprint("*You get ready and stand against the elastic, pulling it back as far as you can.*")
+    lprint("*When you finally let go, you realize you didn't angle the catapult correctly.*")
+    lprint("*You're shot straight forward and splatter against one of the table's legs.*")
+    lprint("*You died.*")
+    Restart_Or_Quit()
+
+def choice24b():
+    lprint("*You try your best to keep balance.*")
+    lprint("*Sadly, you slip and fall to your death.*")
+    Restart_Or_Quit()
 
 def choice22b():
-    lprint("**")
+    lprint("*Luckily, the goose doesn't follow you.*")
+    lprint("*But as you're running, you're picked up and are floating in the air.*")
+    lprint("???: Ugh, I hate bugs.")
+    lprint("*You're thrown outside of the window and fall on the snow.*")
+    lprint("*You can't see over the snow, so you can't see the foot about to step on you until it's much too late.*")
+    lprint("*You're crushed to death.*")
+    Restart_Or_Quit()
 
 def choice15b():
-    lprint("**")
+    lprint("*You can't steal a barbie's shirt.*")
+    lprint("*You'll just have to deal with your ripped shirt.*")
+    lprint("*You exit the barbie house and are met with a very angry looking goose.*")
+    lprint("*Before you know it, it starts attacking you.*")
+    lprint("*You...*")
+    choice29()
+
+def choice29(): 
+    lprint('''a) *run left.*
+b) *run right.*''') 
+
+    answer = input().lower() 
+
+    if answer == "a": 
+        lprint("*You attempt to run left, but the goose is much faster and much bigger than you.*")
+        choice29a()
+    elif answer == "b": 
+        lprint("*You try to run left, but the goose steps on you.*")
+        choice29b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice29a():
+    lprint("*It's beak covers your body whole and he swallows you at once.*")
+    lprint("*You suffocate inside of the goose's stomach.*")
+    Restart_Or_Quit()
+
+def choice29b():
+    lprint("*Your head is crushed between the goose's foot and the floor.*")
+    lprint("*You died.*")
+    Restart_Or_Quit()
 
 def choice14b():
-    lprint("**")
+    lprint("*But, what is your quest exactly?*")
+    lprint("*Right as you confusedly look around, Ace pops up.*")
+    lprint("Ace: How's it going? Why are you so small?")
+    lprint("*He picks you up and sits you on the palm of his hand.*")
+    lprint("You: I drank a potion.")
+    lprint("Ace: Ohh, I can help with that.")
+    lprint("*Ace walks into the kitchen and puts you down on the counter.*")
+    lprint("*He looks around some cabinets and pulls out a red potion.*")
+    lprint("Ace: This should do the trick.")
+    lprint("*He opens the bottle and hands it to you.*")
+    lprint("*You look at him suspiciously but agree to drink it.*")
+    lprint("*Right after drinking it you start to grow and grow.*")
+    lprint("*You grow almost endlessly.*")
+    lprint("*And fast!*")
+    lprint("*You keep growing until your head hits the roof and it becomes hard to stay compact.*")
+    lprint("*You accidentally burst a pipe that was in the ceiling.*")
+    lprint("*You don't even notice Ace leaving the kitchen.*")
+    lprint("You: Where are you going?? Help me!")
+    lprint("Ace: So I can die with you? No thanks~")
+    lprint("*He takes a lighter out of his pocket and throws it behind his back as he's leaving.*")
+    lprint("*You burn along with the house and die a slow and painful death.*")
+    Restart_Or_Quit()
 
 def choice12b():
-    lprint("**")
+    lprint("*There's blue and white frogs hopping over it, slipping every once in a while and sliding around which you find funny.*")
+    lprint("*You approach the pond and put a foot on it, scared to add your second foot.*")
+    lprint("*But it seems secure enough.*")
+    choice26()
+
+def choice26():
+    lprint('''a) *Get on the pond.*
+b) *Don't risk it and continue wandering.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You get on the pond and slide around for a while.*")
+        choice26a()
+    elif answer == "b":
+        lprint("*You decide not to risk it and continue wandering the land.*")
+        choice26b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice26a():
+    lprint("*It's going surprisingly well…*")
+    lprint("*Almost suspiciously well.*")
+    lprint("*Until a frog jumps on your chest and you slip and fall backwards.*")
+    lprint("*The ice begins to crack and you can't move.*")
+    choice27()
+
+def choice27():
+    lprint('''a) *Try to get on land.*
+b) *Stay in place.*''')
+
+    answer = input().lower()
+
+    if answer == "a":
+        lprint("*You try your best to get on land, but to no luck.*")
+        choice27a()
+    elif answer == "b":
+        lprint("*You stay in place, trying your best not to make a move.*")
+        choice27b()
+
+    else: 
+        lprint("You can't do that.")
+        lprint("Please try again.")
+
+def choice27a():
+    lprint("*The ice cracks more and you fall through.*")
+    lprint("*You can swim, but it feels like something has grabbed you and dragged you down into the water.*")
+    lprint("*You're not even able to catch a last breath before you sink into the pond.*")
+    lprint("*You drown to death.*")
+    Restart_Or_Quit()
+
+def choice27b():
+    lprint("*But an asshole frog jumps on top of you, causing another crack in the ice.*")
+    lprint("*Suddenly a bunch more frogs jump on you.*")
+    lprint("*It's like they're doing it on purpose to try and kill you!*")
+    lprint("*The ice fully breaks and you fall into the pond, sinking deeper and deeper no matter how much you try to swim upwards.*")
+    lprint("*You look down and the frogs somehow have gotten a hold of your clothing and are dragging you down into the pond.*")
+    lprint("*The frogs drowned you to death.*")
+    Restart_Or_Quit()
+
+def choice26b():
+    lprint("*You hear some rumbling from what feels like far away.*")
+    lprint("*When you look up you notice a huge tree shaking.*")
+    lprint("*Is it falling?*")
+    lprint("*Before you know it, the tree is falling towards you.*")
+    lprint("*You're unsure of what to do.*")
+    lprint("*Do you run?*")
+    lprint("*It's probably too far away to hit you anyway, right?*")
+    lprint("*You spent too much time thinking about what to do.*")
+    lprint("*The tree has fallen on top of you and killed you.*")
+    Restart_Or_Quit()
 
 def choice11b():
     lprint("*You start getting bigger and bigger, your clothes luckily growing along with you.*")
-    lprint("**")
+    lprint("*You bump your head against the top of the cave and the cave starts rumbling.*")
+    lprint("*You're getting too big for the cave.*")
+    lprint("*So big that the wall starts breaking.*")
+    lprint("*You keep on growing until you practically reach the land of the giants.*")
+    lprint("*You find yourself unable to breathe.*")
+    lprint("*Your limp body flails down on the land and you break the matrix.*")
+    lprint("*But you can't explore it because you died.*")
+    Restart_Or_Quit()
 
 Start() #Call the function "Start"
